@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desgin</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap" rel="stylesheet">
+</head>
+
+<body id="bodyy">
+    <div class="indexPage">
+        <div class="right"></div>
+        <div class="left"></div>
+        <div id="Pages"></div>
+    </div>
+<!--*******************************************************************/
+/***111************************btn hover*******************************/
+/*******************************************************************/-->
+    <div id="Button_Hover" class="Button_Hover">
+        <a class="btn">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            BUTTON
+        </a>
+    </div>
+<!--*******************************************************************/
+/***222************************Glowing text*******************************/
+/*******************************************************************/-->
+    <div id="glowing_text" class="glowing_text">
+        <h1 class="headerJarrar">
+            <span>J</span>
+            <span>A</span>
+            <span>R</span>
+            <span>R</span>
+            <span>A</span>
+            <span>R</span>
+        </h1>
+    </div>
+<!--*******************************************************************/
+/***333************************cardHover*******************************/
+/*******************************************************************/-->
+    <div id="Card_Hover" class="Card_Hover">
+        <div class="card">
+            <div class="content">
+                <h2>Tanjero</h2>
+                <p>Tanjiro Kamado  is the main protagonist of Demon Slayer: Kimetsu no Yaiba. He is a Kanoe-ranked member of the Demon Slayer Corps, who joined for the sake of hunting down the one responsible for the murder of his family and his sister's transformation into a Demon.</p>
+            </div>
+            <img src="./tanjero.png"/>
+        </div>
+    </div>
+<!--*******************************************************************/
+/***444*****************Loading animation******************************/
+/*******************************************************************/-->
+ <div id="LoadingAnimation" class="LoadingAnimation">
+    <div class="loader">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+ </div>
+ <!--*******************************************************************/
+/***555*****************text 3d******************************/
+/*******************************************************************/-->
+<div class="text3d" id="text3d">
+    
+    <div id="text" data-text="CSS 3D TEXT">
+        CSS 3D TEXT
+    </div>
+</div>
+<script>
+    var text = document.getElementById('text')
+    var shadow =''
+    for(var i=0;i<30;i++){
+        shadow +=(shadow?',':'')+-i*1+'px '+i*1+'px 0 #d9d9d9'
+    }
+
+    text.style.textShadow=shadow
+</script>
+ <!--*******************************************************************/
+/***666*****************loadginanimtion2*****************************/
+/*******************************************************************/-->
+<div class="loadingAnimation2" id="loadingAnimation2">
+    <div class="container156">
+    <div class="loader1"><span></span></div>
+    </div>
+</div>
+ <!--*******************************************************************/
+/***777*****************Text Reflection *******************************/
+/*******************************************************************/-->
+<div class="TextReflection" id="TextReflection">
+    <h1 data-text="JARRAR">JARRAR</h1>
+</div>
+ <!--*******************************************************************/
+/***888*****************Shadow text *******************************/
+/*******************************************************************/-->
+<div class="shadow" id="shadow">
+    <h1 id="text1" contenteditable="">Hello Wolrd</h1>
+    <script>
+        var text1 = document.getElementById('text1')
+        let shadow1 =''
+        for(let i=0;i<500 ;i++){
+            shadow1+=(shadow1?',':'')+i*1+'px ' +i*1+'px 0 #01ded3'
+        }
+        text1.style.textShadow=shadow1
+    </script>
+</div>
+</body>
+</html>
+<script>
+
+    var Pages=document.getElementById("bodyy").childNodes;
+    var PagesNumber=0;
+    var ArrayOfPages=[];
+    var CircleSelectd=""
+
+    for(var i=1;i<Pages.length;i++)
+    {
+        if(Pages[i].nodeName =="DIV" && Pages[i].classList[0]!="indexPage"){
+            PagesNumber=PagesNumber+1
+            ArrayOfPages.push({divName:Pages[i].classList[0],index:PagesNumber,ScrollPos:Pages[i].offsetTop})         
+        }
+    }
+    var NameDivWhereScrollAtPos=ArrayOfPages.map((e)=>{
+            return {pos:e.ScrollPos,divName:e.divName};
+        })
+        CircleSelectd = ArrayOfPages[0].divName+"white"
+         window.addEventListener("scroll",(e)=>{
+        for(let i=0;i<NameDivWhereScrollAtPos.length;i++)
+        {
+            if(window.scrollY+100>NameDivWhereScrollAtPos[NameDivWhereScrollAtPos.length-1].pos){
+                document.getElementsByClassName(CircleSelectd)[0].style.backgroundColor="transparent"
+                CircleSelectd=NameDivWhereScrollAtPos[NameDivWhereScrollAtPos.length-1].divName
+                document.getElementsByClassName(CircleSelectd+"white")[0].style.backgroundColor="white"
+
+            }else if(window.scrollY+100>NameDivWhereScrollAtPos[i].pos&& window.scrollY<NameDivWhereScrollAtPos[i+1].pos ){
+                document.getElementsByClassName(CircleSelectd)[0].style.backgroundColor="transparent"
+                CircleSelectd=NameDivWhereScrollAtPos[i].divName
+                document.getElementsByClassName(CircleSelectd+"white")[0].style.backgroundColor="white"
+            }
+        }
+        
+    })
+    for(var j=0;j<PagesNumber;j++)
+    {
+        var Circle=document.createElement("span")
+        Circle.classList.add(ArrayOfPages[j].divName)
+        Circle.classList.add(ArrayOfPages[j].divName+"white")
+        Circle.addEventListener('click',(e)=>{
+           document.getElementsByClassName(CircleSelectd)[0].style.backgroundColor="transparent"
+           e.target.style.backgroundColor="white"
+           CircleSelectd=e.target.classList[1];
+           window.scrollTo(0,document.getElementById(e.target.classList[0]).offsetTop)
+        })
+        document.getElementById("Pages").appendChild(Circle)
+    }
+    /*************************/
+    document.getElementById("Pages").childNodes[0].style.backgroundColor="white"
+    CircleSelectd=document.getElementById("Pages").childNodes[0].classList[0]+"white"
+    
+</script>
