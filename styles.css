@@ -857,7 +857,7 @@ h1::before {
 
 .shadow {
   /*******************************************************************/
-  /***777****************Shadow text*******************************/
+  /***888****************Shadow text*******************************/
   /*******************************************************************/
   position: relative;
   height: 100%;
@@ -886,5 +886,195 @@ h1::before {
   width: 100%;
   text-align: center;
   text-shadow: 1px 1px 0 #01ded3;
+}
+
+/*******************************************************************/
+/***999****************WavyLoaderAnimationt*******************************/
+/*******************************************************************/
+.WavyLoaderAnimation {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: #1f242d;
+  font-family: sans-serif;
+  color: #50545c;
+}
+
+.loader3 {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  overflow: hidden;
+  -webkit-transform: rotate(175deg);
+          transform: rotate(175deg);
+}
+
+.loader3 span {
+  position: absolute;
+  top: calc(12px * var(--i));
+  left: calc(12px * var(--i));
+  right: calc(12px * var(--i));
+  bottom: calc(12px * var(--i));
+  border: 10px solid #0b0b00;
+  border-top: 10px solid #0f0;
+  border-left: 10px solid #0f0;
+  border-radius: 50%;
+  -webkit-animation: animate 1s alternate ease-in-out infinite;
+          animation: animate 1s alternate ease-in-out infinite;
+  -webkit-filter: hue-rotate(calc(60deg * var(--i)));
+          filter: hue-rotate(calc(60deg * var(--i)));
+  -webkit-animation-delay: calc(-0.1s * var(--i));
+          animation-delay: calc(-0.1s * var(--i));
+}
+
+@-webkit-keyframes animate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+}
+
+@keyframes animate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+}
+
+/*******************************************************************/
+/***10****************WavyLoaderAnimationt*******************************/
+/*******************************************************************/
+.ParallaxScrolling {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: #1f242d;
+  font-family: sans-serif;
+  color: #50545c;
+}
+
+.ParallaxScrolling h1 {
+  position: relative;
+  font-size: 16em;
+  font-weight: 700;
+  color: transparent;
+  -webkit-text-stroke: 1px #555;
+  font-size: clamp(2.5rem, 15.5vw, 10.5rem);
+  cursor: pointer;
+}
+
+.ParallaxScrolling h1:hover {
+  color: white;
+  -webkit-text-stroke: 1px transparent;
+  text-shadow: 0 0 10px crimson, 0 0 20px crimson, 0 0 40px crimson, 0 0 80px crimson;
+}
+
+.ParallaxScrolling h1:hover span {
+  color: transparent;
+  text-shadow: none;
+  -webkit-text-stroke: 1px #555;
+  -webkit-animation-name: whiteTotrans;
+          animation-name: whiteTotrans;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes whiteTotrans {
+  0%, 5% {
+    color: white;
+    -webkit-text-stroke: transparent;
+  }
+  45%, 50% {
+    color: white;
+    -webkit-text-stroke: transparent;
+  }
+  5%, 95% {
+    -webkit-text-stroke: transparent;
+    color: transparent;
+  }
+}
+
+@keyframes whiteTotrans {
+  0%, 5% {
+    color: white;
+    -webkit-text-stroke: transparent;
+  }
+  45%, 50% {
+    color: white;
+    -webkit-text-stroke: transparent;
+  }
+  5%, 95% {
+    -webkit-text-stroke: transparent;
+    color: transparent;
+  }
+}
+
+/*******************************************************************/
+/***11****************WavyLoaderAnimationt*******************************/
+/*******************************************************************/
+.mouseMoveHeart {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: #1f242d;
+  font-family: sans-serif;
+  color: #50545c;
+}
+
+.mouseMoveHeart h1 {
+  position: relative;
+  font-size: 16em;
+  font-weight: 700;
+  color: transparent;
+  -webkit-text-stroke: 1px #555;
+  font-size: clamp(2.5rem, 8.5vw, 10.5rem);
+  cursor: pointer;
+}
+
+.mouseMoveHeart h1:hover {
+  color: white;
+  -webkit-text-stroke: 1px transparent;
+  text-shadow: 0 0 10px crimson, 0 0 20px crimson, 0 0 40px crimson, 0 0 80px crimson;
 }
 /*# sourceMappingURL=styles.css.map */

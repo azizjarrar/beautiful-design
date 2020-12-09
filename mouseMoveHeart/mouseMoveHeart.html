@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./mouseMoveHeart.css"/>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let test=0;
+       
+        document.addEventListener("mousemove",(e)=>{
+        if(test==0){
+            test=1
+
+            var currentdate = new Date(); 
+            var body = document.querySelector('body');
+            var heart = document.createElement('span');
+            var x = e .offsetX
+            var y = e .offsetY
+            heart.style.left = x+'px'
+            heart.style.top = y+'px'
+            var size = Math.random()*100;
+            heart.style.width = size +"px";
+            heart.style.height = size +"px";
+            body.appendChild(heart)
+            setTimeout(()=>{
+                heart.remove();
+            },2000)
+            setTimeout(()=>{
+                test=0
+            },50)
+        }
+  
+            
+     
+        })
+    </script>
+</body>
+</html>

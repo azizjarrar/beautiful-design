@@ -1,0 +1,93 @@
+/*******************************************************************/
+/***10****************WavyLoaderAnimationt*******************************/
+/*******************************************************************/
+.ParallaxScrolling {
+    background: #111;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    font-family:  cursive;
+
+  }
+  .ParallaxScrolling .box{
+    position: relative;
+    height: 100%;
+    width: 100%;
+  }
+  .ParallaxScrolling::before {
+    content: "Parallax";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    font-size: 16em;
+    font-weight: 700;
+    color: transparent;
+    -webkit-text-stroke: 1px #555;
+    font-size: clamp(2rem, 15vw, 10rem);
+  }
+  
+  .ParallaxScrolling section {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    min-height: 100vh;
+    min-width: 100%;
+    overflow: visible;
+    padding-bottom: 300px;
+  }
+   section:nth-child(even) .container15{
+    flex-direction: row-reverse;
+  }
+  .ParallaxScrolling section h2{
+      margin-left: 200px;
+      font-size: clamp(1em, 4em, 5em);
+      color: #fff;
+      margin-bottom: 20px;
+
+    }
+    .ParallaxScrolling section .container15{
+        position: relative;
+        width: 1000px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        left: 10%;
+    }
+    .ParallaxScrolling section .container15 .imgBx{
+        position: relative;
+        width: 800px;
+        height: 400px;
+        overflow: hidden;
+        box-shadow: 0 25px 35px rgba(0, 0, 0, 0.1);
+    }
+    .ParallaxScrolling section .container15 .imgBx img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+    }
+    section .container15  .paraghraph{
+        position: absolute;
+        right: 0;
+        margin-top: 200px;
+        margin-bottom: 40px;
+        padding: 40px;
+        background: #333;
+        z-index: 1;
+        max-width: 400px;
+        color: #fff;
+        box-shadow: 0 25px 35px rgba(0, 0, 0, 0.1);
+        border-bottom: 6px solid #4ac7ff;
+    }
